@@ -5263,6 +5263,13 @@ react-is@^16.8.1, react-is@^16.8.4, react-is@^16.9.0:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.11.0.tgz#b85dfecd48ad1ce469ff558a882ca8e8313928fa"
   integrity sha512-gbBVYR2p8mnriqAwWx9LbuUrShnAuSCNnuPGyc7GJrMVQtPDAh8iLpv7FRuMPFb56KkaVZIYSz1PrjI9q0QPCw==
 
+react-native-masonry-list@^2.13.0:
+  version "2.13.0"
+  resolved "https://registry.yarnpkg.com/react-native-masonry-list/-/react-native-masonry-list-2.13.0.tgz#dce8c1096d59f538716556b08a4f77ee105cb2b4"
+  integrity sha512-hXzUDZ0gmnAJoReXqSBjU0YZm+ETuI8+44ckhiBdnZpPxvyT//9LwLQIOzK43tavbG655C9F8BritmqwdCcgLA==
+  dependencies:
+    prop-types "^15.6.2"
+
 react-native@0.61.2:
   version "0.61.2"
   resolved "https://registry.yarnpkg.com/react-native/-/react-native-0.61.2.tgz#987b91b063557f8ebec803fdfea2044a24bdbe4d"
