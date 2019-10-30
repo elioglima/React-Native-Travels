@@ -1,7 +1,7 @@
 export const data = [
   {
     src: require('../assets/images/images1.jpeg'),
-    name: 'Brasil',
+    name: 'SP',
     desc: '',
   },
   {
