@@ -1,44 +1,32 @@
 export const data = [
   {
-    src: require('../assets/images/images1.jpeg'),
-    name: 'SP',
+    src: require('../assets/images/caribebrasileiro.jpeg'),
+    name: 'Caribe brasileiro',
     desc: '',
   },
   {
-    src: require('../assets/images/images2.jpeg'),
-    name: 'Brasil',
+    src: require('../assets/images/cassablanca.jpeg'),
+    name: 'Cassablanca',
     desc: '',
   },
   {
-    src: require('../assets/images/images3.jpeg'),
-    name: 'Brasil',
-    desc: '',
-  },
-
-  {
-    src: require('../assets/images/images5.jpeg'),
-    name: 'Brasil',
+    src: require('../assets/images/dubai.jpeg'),
+    name: 'Dubai',
     desc: '',
   },
   {
-    src: require('../assets/images/images6.jpeg'),
-    name: 'Brasil',
+    src: require('../assets/images/portogalinhas.jpg'),
+    name: 'Porto Galinhas',
     desc: '',
   },
   {
-    src: require('../assets/images/images7.jpeg'),
-    name: 'Brasil',
-    desc: '',
-  },
-
-  {
-    src: require('../assets/images/images9.jpeg'),
-    name: 'Brasil',
+    src: require('../assets/images/praiafrances.jpg'),
+    name: 'Praia do Frances',
     desc: '',
   },
   {
-    src: require('../assets/images/images10.jpeg'),
-    name: 'Brasil',
+    src: require('../assets/images/riodejaneiro.jpg'),
+    name: 'Rio de Janeiro',
     desc: '',
   },
 ];

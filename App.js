@@ -26,17 +26,25 @@ const App = () => {
 
   return (
     <SafeAreaView>
-      <View style={styles.baseTitulo}>
-        <Text style={styles.titulo}>Explore</Text>
-      </View>
-      <View style={styles.baseInputTexto}>
-        <TextInput
-          style={styles.inputTexto}
-          value={pesquisa}
-          onChangeText={e => setPesquisa(e)}
-        />
-      </View>
       <ScrollView>
+        <View style={styles.baseTitulo}>
+          <Text style={styles.titulo}>Explore</Text>
+        </View>
+        <View style={styles.baseInputTexto}>
+          <View style={styles.baseInputTexto1}>
+            <TextInput
+              style={styles.inputTexto}
+              value={pesquisa}
+              onChangeText={e => setPesquisa(e)}
+              placeholder={'Search'}
+            />
+          </View>
+        </View>
+        <View style={styles.baseDescricao}>
+          <Text style={styles.baseDescricaoTitulo}>
+            Best places o live & works
+          </Text>
+        </View>
         <View style={styles.container}>
           <View style={styles.foto}>
             {data
@@ -66,28 +74,37 @@ const styles = StyleSheet.create({
   container: {},
   baseTitulo: {
     flexDirection: 'column',
-    paddingVertical: 5,
-    paddingHorizontal: 15,
+    paddingLeft: 13,
+    paddingRight: 20,
+    paddingBottom: 3,
+    paddingTop: 15,
   },
   titulo: {
     color: '#344',
+    fontFamily: 'Arial',
     fontSize: 20,
     fontWeight: 'bold',
   },
 
   baseInputTexto: {
-    paddingHorizontal: 15,
-    paddingBottom: 5,
+    paddingHorizontal: 12,
+    paddingBottom: 8,
+    paddingRight: 14,
   },
-  inputTexto: {
+
+  baseInputTexto1: {
     backgroundColor: '#d4d7dd',
-    color: '#344',
-    fontSize: 20,
-    fontWeight: 'bold',
     borderRadius: 8,
     paddingLeft: 6,
     paddingTop: 4,
     paddingBottom: 4,
+  },
+  inputTexto: {
+    color: '#344',
+    fontSize: 14,
+    fontWeight: 'bold',
+    paddingTop: 0,
+    paddingBottom: 0,
   },
   foto: {
     flex: 1,
@@ -99,7 +116,7 @@ const styles = StyleSheet.create({
   },
   backgroundImage: {
     alignSelf: 'stretch',
-    height: 100,
+    height: 150,
     //Its for IOS
     shadowColor: '#000',
     shadowOffset: {width: 0, height: 2},
@@ -109,6 +126,17 @@ const styles = StyleSheet.create({
     elevation: 5,
     position: 'relative',
     borderRadius: 10,
+  },
+
+  baseDescricao: {
+    flexDirection: 'column',
+    paddingVertical: 5,
+    paddingHorizontal: 15,
+  },
+  baseDescricaoTitulo: {
+    color: '#344',
+    fontSize: 18,
+    fontWeight: 'bold',
   },
 });
 
