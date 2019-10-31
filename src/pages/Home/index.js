@@ -1,29 +1,24 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
+import React, {useState, useRef} from 'react';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
-import React, {useState, useEffect} from 'react';
 import {
-  FlatList,
   StyleSheet,
   View,
   Text,
-  Image,
   ImageBackground,
   SafeAreaView,
   ScrollView,
   TextInput,
   TouchableOpacity,
+  TouchableWithoutFeedback,
 } from 'react-native';
 
-import {data} from './src/data';
-import {bold} from 'colorette';
-const App = () => {
+import {data} from '../../data';
+
+export default ({navigation}) => {
   const [pesquisa, setPesquisa] = useState('');
+  const ref = useRef();
+  const {navigate} = navigation;
 
   return (
     <SafeAreaView>
@@ -31,16 +26,68 @@ const App = () => {
         <View style={styles.baseTitulo}>
           <Text style={styles.titulo}>Explore</Text>
         </View>
-        <View style={styles.baseInputTexto}>
-          <View style={styles.baseInputTexto1}>
-            <TextInput
-              style={styles.inputTexto}
-              value={pesquisa}
-              onChangeText={e => setPesquisa(e)}
-              placeholder={'Search'}
-            />
-          </View>
+
+        <View
+          style={{
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            paddingLeft: 10,
+            paddingRight: 15,
+          }}>
+          <TouchableWithoutFeedback
+            onPress={() => {
+              ref.current.focus();
+            }}>
+            <View
+              style={{
+                backgroundColor: '#d4d7dd',
+                paddingHorizontal: 8,
+                borderTopLeftRadius: 7,
+                borderBottomLeftRadius: 7,
+                flexDirection: 'row',
+                alignItems: 'center',
+                flexGrow: 1,
+              }}>
+              <Icon
+                name="search"
+                size={17}
+                color="#999"
+                style={{paddingRight: 5}}
+              />
+              <TextInput
+                onChangeText={text => setPesquisa(text)}
+                placeholder="Search"
+                style={{fontSize: 15, paddingTop: 2, paddingBottom: 2}}
+                ref={ref}
+                value={pesquisa}
+              />
+            </View>
+          </TouchableWithoutFeedback>
+          <TouchableOpacity
+            onPress={() => {
+              setPesquisa('');
+            }}>
+            <View
+              style={{
+                backgroundColor: '#d4d7dd',
+                paddingLeft: 15,
+                paddingRight: 10,
+                paddingVertical: 12,
+                borderTopRightRadius: 7,
+                borderBottomRightRadius: 7,
+                flexDirection: 'row',
+                alignItems: 'center',
+              }}>
+              <Icon
+                name="window-close"
+                size={18}
+                color="#999"
+                style={{paddingRight: 5}}
+              />
+            </View>
+          </TouchableOpacity>
         </View>
+
         <View style={styles.baseDescricao}>
           <Text style={styles.baseDescricaoTitulo}>
             Best places o live & works
@@ -54,7 +101,9 @@ const App = () => {
               )
               .map(image => {
                 return (
-                  <TouchableOpacity style={styles.baseFoto}>
+                  <TouchableOpacity
+                    style={styles.baseFoto}
+                    onPress={() => navigate('Details', {selected: image})}>
                     <ImageBackground
                       source={image.src}
                       style={styles.backgroundImage}
@@ -91,9 +140,19 @@ const styles = StyleSheet.create({
     paddingHorizontal: 12,
     paddingBottom: 8,
     paddingRight: 14,
+    justifyContent: 'space-between',
+  },
+
+  baseInputTextoIcone: {
+    backgroundColor: '#d4d7dd',
+    borderRadius: 8,
+    paddingLeft: 6,
+    paddingTop: 4,
+    paddingBottom: 4,
   },
 
   baseInputTexto1: {
+    flexDirection: 'row',
     backgroundColor: '#d4d7dd',
     borderRadius: 8,
     paddingLeft: 6,
@@ -112,7 +171,8 @@ const styles = StyleSheet.create({
   },
   baseFoto: {
     alignSelf: 'stretch',
-    paddingHorizontal: 15,
+    paddingLeft: 13,
+    paddingRight: 16,
     paddingVertical: 8,
   },
   backgroundImage: {
@@ -150,5 +210,3 @@ const styles = StyleSheet.create({
     textShadowColor: 'rgba(0,0,0,0.7)',
   },
 });
-
-export default App;

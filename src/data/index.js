@@ -2,31 +2,31 @@ export const data = [
   {
     src: require('../assets/images/caribebrasileiro.jpeg'),
     name: 'Caribe brasileiro',
-    desc: '',
+    description: 'Caribe brasileiro',
   },
   {
     src: require('../assets/images/cassablanca.jpeg'),
     name: 'Cassablanca',
-    desc: '',
+    description: '',
   },
   {
     src: require('../assets/images/dubai.jpeg'),
     name: 'Dubai',
-    desc: '',
+    description: '',
   },
   {
     src: require('../assets/images/portogalinhas.jpg'),
     name: 'Porto Galinhas',
-    desc: '',
+    description: '',
   },
   {
     src: require('../assets/images/praiafrances.jpg'),
     name: 'Praia do Frances',
-    desc: '',
+    description: '',
   },
   {
     src: require('../assets/images/riodejaneiro.jpg'),
     name: 'Rio de Janeiro',
-    desc: '',
+    description: '',
   },
 ];
